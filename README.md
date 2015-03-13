@@ -14,11 +14,13 @@ An experimental, HTML-based wireframe and prototype framework for designers.
 1.  Use the latest version of Chrome.
 2.  Enable the experimental chrome flag: 
     chrome://flags/#enable-experimental-web-platform-features
-3. Bug your designer for the URL to the prototype.
+3.	Bug your designer for the URL to the prototype.
 
 ##Contributors
 The primary purpose of ProtoUX is to enable designers of all skill levels to rapidly prototype by using as little JS as possible.
 
-To accomplish this, it is important that:
-1.  You shove all the JS under the hood in protoux.js
-2.  Update the protoux-docs.html with any changes
+To accomplish this, web components, html imports, shadow DOM, and the like are used to build a "library" of interface elements. These elements, with all of the JS under the hood, enable quick prototype building with simple HTML/CSS structures.
+
+When contributing in the building of compoennts, it is important that:
+1.	You shove all the JS under the hood
+2.	You update the protoux-docs.html with any changes/updates
