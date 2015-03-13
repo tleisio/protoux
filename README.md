@@ -17,5 +17,8 @@ An experimental, HTML-based wireframe and prototype framework for designers.
 3. Bug your designer for the URL to the prototype.
 
 ##Contributors
-1.  Update the docs page as necessary.
-2.  Shove all JS stuff under the hood.
+The primary purpose of ProtoUX is to enable designers of all skill levels to rapidly prototype by using as little JS as possible.
+
+To accomplish this, it is important that:
+1.  You shove all the JS under the hood in protoux.js
+2.  Update the protoux-docs.html with any changes
