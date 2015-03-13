@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="">
+		<meta name="description" content="" >
+		<meta name="keywords" content="" >
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<title></title>
+		
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800' rel='stylesheet' type='text/css'>
+		
+		<!-- Make the world turn. -->
+		<script type="text/javascript" src="js/protoux.js"></script>
+
+		<!-- Prototype specific JS, CSS, etc. goes below. -->
+		<link href="css/protoux-css/docs.css" rel="stylesheet" type="text/css">
+
+	</head>
+	
+	<body>
+		<!--
+			Example components within a layout.
+			Change ID's to be unique.
+			Change href to point to components.
+			Include layouts via data-layout attribute.
+		-->
+		<header class="protoux">
+			<h1>ProtoUX</h1>
+			<p>An experimental, HTML-based wireframe and prototype framework for designers.</p>
+		</header>
+
+		<div class="page">
+			<section class="gs">
+				<h1>Getting Started</h1>
+				<div class="row box">
+					<div class="col span_1_of_2">
+						<h2>Designers</h2>
+						<ol>
+							<li>Use the latest version of <a href="https://www.google.com/chrome/browser/#eula">Chrome</a>.</li>
+							<li>Enable the experimental chrome flag: <br />
+								chrome://flags/#enable-experimental-web-platform-features</li>
+							<li>Download the <a href="https://thehub.thomsonreuters.com/docs/DOC-863582?sr=stream" target="_blank">ProtoUX.zip</a> and extract into a directory of your choosing. Copy this directory path.</li>
+							<li><a href="#iis">Setup IIS</a> for a localhost server.</li>
+							<li>Create your wireframes and prototype! <a href="http://www.sublimetext.com/">Sublime</a> and <a href="http://notepad-plus-plus.org/">Notepad++</a> are great, free editors.</li>
+						</ol>
+					</div>
+					<div class="col span_1_of_2">
+						<h2>Participants</h2>
+						<ol>
+							<li>Use the latest version of <a href="https://www.google.com/chrome/browser/#eula">Chrome</a>.</li>
+							<li>Enable the experimental chrome flag: <br />
+								chrome://flags/#enable-experimental-web-platform-features</li>
+							<li>Bug your designer for the URL to the prototype.</li>
+						</ol>
+					</div>
+				</div>
+			</section>
+			<br />
+			<br />
+			<div class="row">
+				<div class="col span_1_of_2">
+					<h1>Importing Partial .html Files</h1>
+					<div class="box">
+						<p>The cleanest method for importing partial HTML files into your page:</p>
+						<code>&lt;link is="ux-link" id="[*]" href="[*]" data-layout="[*]" rel="import"&gt;</code>
+						<p>Be sure to replace the [*] with a unique id for each import, the proper directory path to the import, and any optional layout class you want to be applied to the import.</p>
+					</div>
+				</div>
+				<div class="col span_1_of_2">
+					<h1>Building Partial .html Files</h1>
+					<div class="box">
+						<p>The root node of your partial .html files should have this structure:</p>
+						<code>&lt;div class="wrap"&gt;<br /><span class="tab">&lt;-- Your HTML --&gt;</span><br />&lt;/div&gt;</code>
+					</div>
+				</div>
+			</div>
+			<br />
+			<br />
+			<div class="row">
+				<div class="col span_1_of_2">
+					<h1>File Structure</h1>
+					<div class="box">
+						<p>The root directory of the ProtoUX zip file is shown below. Don't remove or change the required files or folders. Otherwise, go nuts however you want to organize your prototype.</p>
+						<p><img src="imgs/protoux-dirs-3.png" alt="ProtoUX file structure." /></p>
+					</div>
+				</div>
+				<div class="col span_1_of_2">
+					<h1>Layout</h1>
+					<div class="box">
+						<p>With standard HTML:</p>
+						<code>&lt;div class="row"&gt;<br /><span class="tab">&lt;div class="col span_#_of_#"&gt;</span><br /><span class="tab"><span class="tab">&lt;-- Your HTML --&gt;</span></span><br /><span class="tab">&lt;/div&gt;</span><br />&lt;/div&gt;</code>
+						<p>With link attributes:</p>
+						<code>&lt;div class="row"&gt;<br /><span class="tab">&lt;link is="ux-link" id="[*]" href="[*]" data-layout="[col span_#_of_#]" rel="import"&gt;</span><br />&lt;/div&gt;</code>
+					</div>
+				</div>
+			</div>
+			<br />
+			<br />
+			<div class="row">
+				<div class="col span_1_of_2">
+					<h1>Annotations</h1>
+					<div class="box">
+						<ux-annotation>An example annotation.</ux-annotation>
+						<p>Include any annotations within any parent container:</p>
+						<code>&lt;ux-annotation&gt;Your annotation.&lt;/ux-annotation&gt;</code>
+					</div>
+				</div>
+				<div class="col span_1_of_2">
+					<h1>ProtoUX Control Bar</h1>
+					<div class="box">
+						<p>The ProtoUX control bar is included via the custom "ux-controlbar" tag at the bottom of the index.html file.</p>
+						<p>Toggle the bar visibility with the tilde (~) key.</p>
+					</div>
+				</div>
+			</div>
+			<br />
+			<br />
+			<div class="row">
+				<div class="col span_1_of_2">
+					<h1>Wireframe CSS</h1>
+					<div class="box">
+						<p>Coming soon...</p>
+					</div>
+				</div>
+				<div class="col span_1_of_2">
+					<h1>Custom Elements</h1>
+					<div class="box">
+						<p>Coming soon...</p>
+					</div>
+				</div>
+			</div>
+			<br />
+			<br />
+			<div class="row">
+				<div class="col span_1_of_2">
+					<h1 id="iis">IIS Setup</h1>
+					<div class="box">
+						<p>(not as scary as it looks)</p>
+						<ol>
+							<li>
+								Windows search for: "Internet Information Services (IIS) Manager" and open.
+								<ol>
+									<li>If you do not have IIS installed, it’s a windows feature that you can turn on:</li>
+									<li>Windows search for “Turn Windows features on or off”</li>
+									<li>Ensure that “internet information services” is checked</li>
+								</ol>
+							</li>
+							<li>Click the expand triangle underneath “connections” on the left until you see “sites”.</li>
+							<li>Click "sites"</li>
+							<li>Click "Add Web Site..." on the right "Actions" menu</li>
+							<li>Choose a site name</li>
+							<li>Paste the directory path where you prototype files live into the “physical path” input.</li>
+							<li>Click "Connect as...", select "Specific user:", click "Set...", enter your full TEN\Username and password.</li>
+							<li>Click "Test Connection" and ensure all items in the results list is green/checked</li>
+							<li>Enter a port number that isn’t in use (84 used arbitrarily for this demo)</li>
+							<li>Click “OK”</li>
+							<li>Click on "Browse *:84 (http)" on the right side "actions" menu to ensure the site is started and working.</li>
+						</ol>
+					</div>
+				</div>
+				<div class="col span_1_of_2">
+					<h1>...</h1>
+					<div class="box">
+						<p>Coming soon...</p>
+					</div>
+				</div>
+			</div>
+			<br />
+			<br />
+			<hr />
+			<br />
+			<br />
+			<div class="row">
+				<div class="col span_2_of_3">
+					<h1>ProtoUX Change Log</h1>
+					<div class="box">
+						<p>2014.10.30</p>
+						<ul>
+							<li>You now have more freedom to organize your files and folders.</li>
+							<li>ProtoUX is now namespaced properly.</li>
+							<li>Fixed .box styling issue.</li>
+						</ul>
+					</div>
+					<div class="box">
+						<p>2014.10.13</p>
+						<ul>
+							<li>Extended link tags so that you don't have to type as much to import.</li>
+							<li>Restructured the file directory structure. Less clutter for you.</li>
+							<li>Started to consolidate ProtoUX resources to be "under the hood". Yet lesser clutter for you.</li>
+							<li>Created protoux-doc.html</li>
+							<li>Created protoux-examples.html</li>
+							<li>Began experimenting with new, custom tags: ux-tabs, ux-grid. Play at your own risk!</li>
+						</ul>
+					</div>
+					<div class="box">
+						<p>2014.09.30</p>
+						<ul>
+							<li>Initial release via <a href="https://thehub.thomsonreuters.com/groups/npd-ux-sandbox/blog/2014/09/30/html-imports-ux-workflows?sr=stream">HTML Imports &amp; UX Workflows</a> article publishing.</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col span_1_of_3">
+					<h1>ProtoUX In-Progress</h1>
+					<div class="box">
+						<ol>
+							<li>Setup centralized, accessible UX server for prototypes.</li>
+							<li>Put in a user warning to detect the webcomponent/import functionality.</li>
+							<li>Make better the layout responsiveness stuff.</li>
+							<li>The protoux-examples.html page should probably be less piecemeal.</li>
+							<li>Docs need more lipstick.</li>
+							<li>Love annotations more.</li>
+							<li>Continue testing custom ProtoUX elements with built-in functionality.</li>
+							<li>Continue updating the docs page as necessary.</li>
+							<li>Continue shoving things under the ProtoUX hood (consolidate dependent source files).</li>
+						</ol>
+						<hr />
+						<p>Questions, comments, desires? Email: tim.leisio@thomsonreuters.com</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+
+		<!-- ProtoUX control bar. -->
+		<ux-controlbar></ux-controlbar>
+	</body>
+
+</html>

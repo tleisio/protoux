@@ -1,0 +1,28 @@
+<!--
+	Template definition
+-->
+<template id="ux-grid">
+	<script>
+		function itemClick(event) {
+			console.log("item hit: " + event.currentTarget);
+		}
+	</script>
+	<style>
+		
+	</style>
+	
+	<!-- Content with insertion points. -->
+	<content select="ux-annotation"></content>
+	<content select="item" onclick="itemClick(event)"></content>
+
+</template>
+
+<!-- Do Not Remove -->
+<!--
+	Encapsulation does not seem to work.
+	These scripts need to be unique and put into protoux.js
+
+	TODO: Create unique function in protoux.js for custom grid functionality
+-->
+<script>protoux.loadCustomElement();</script>
+<!-- /Do Not Remove -->

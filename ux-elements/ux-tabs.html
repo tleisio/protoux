@@ -1,0 +1,31 @@
+<!--
+	Template definition
+-->
+<template id="ux-tabs">
+	<!-- Script to handle element events.  -->
+	<script>
+		
+	</script>
+
+	<!-- Element styling. -->
+	<style>
+		.clear {
+			clear:both;
+		}
+	</style>
+	
+	<!-- Content with insertion points. -->
+	<content select="ux-annotation"></content>
+	<content select="tab"></content>
+	<div class="clear"></div>
+	<content select="panel"></content>
+
+</template>
+
+<!-- Do Not Remove -->
+<!--
+	Encapsulation does not seem to work.
+	These scripts need to be unique and put into protoux.js
+-->
+<script>protoux.loadTabsElement();</script>
+<!-- /Do Not Remove -->

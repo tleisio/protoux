@@ -1,0 +1,110 @@
+<!--
+	Template definition
+-->
+<template id="ux-controlbar">
+	<!-- Script to handle element events.  -->
+	<script>
+		var isControlBarHidden = false;
+		var showAnnotations = true;
+
+		// Window listener to toggle the bar's visibility.
+		window.addEventListener('keypress', function(event) {
+			if (event.keyCode == 96) {
+				toggleProtoUxBar();
+			}
+		});
+
+		/*
+			Show and hide the ProtoUX control bar.
+		*/
+		function toggleProtoUxBar() {
+			var el = document.getElementsByTagName('ux-controlbar')[0].shadowRoot.getElementById('protoux-controlbar');
+			if (isControlBarHidden == false) {
+				isControlBarHidden = true;
+				el.style.bottom = "-44px";
+			}
+			else {
+				isControlBarHidden = false;
+				el.style.bottom = "0px";
+			}
+		}
+
+		/*
+			Annotations overlay toggle
+		*/
+		function toggleAnnotations() {
+			var i;
+			var loopLength = document.getElementsByTagName('ux-annotation').length;
+
+			if (showAnnotations === false) {
+				showAnnotations = true;
+				for (i=0; i<loopLength; i++) {
+					document.getElementsByTagName('ux-annotation')[i].shadowRoot.querySelector('div.annotation').classList.remove('hide');
+				}
+				document.getElementsByTagName('ux-controlbar')[0].shadowRoot.getElementById('annotationsoff').classList.add('hide');
+				document.getElementsByTagName('ux-controlbar')[0].shadowRoot.getElementById('annotationson').classList.remove('hide');
+
+			}
+			else {
+				showAnnotations = false;
+				for (i=0; i<loopLength; i++) {
+					document.getElementsByTagName('ux-annotation')[i].shadowRoot.querySelector('div.annotation').classList.add('hide');
+				}
+				document.getElementsByTagName('ux-controlbar')[0].shadowRoot.getElementById('annotationsoff').classList.remove('hide');
+				document.getElementsByTagName('ux-controlbar')[0].shadowRoot.getElementById('annotationson').classList.add('hide');
+			}
+		}
+
+	</script>
+
+	<!-- Element styling. -->
+	<style>
+		#protoux-controlbar {
+			width:100%;
+			background:rgba(21,21,21,0.9);
+			border-top:1px solid #131313;
+			color:#CCC;
+			font-size:11px;
+			text-align:center;
+			transition:bottom 0.15s;
+			transition-timing-function:ease-out;
+			position:fixed;
+			bottom:0;
+			left:0;
+			z-index:9999;
+		}
+		#protoux-controlbar a,
+		#protoux-controlbar a:visited {
+			color:yellow;
+		}
+		#protoux-controlbar a:hover {
+
+		}
+		#protoux-controlbar button {
+			border:1px solid #FFF;
+			border-radius:0.25rem;
+			font-size:inherit;
+		}
+		#protoux-controlbar button:hover {
+			cursor:pointer;
+		}
+		.hide {
+			width:0;
+			height:0;
+			display:none;
+		}
+
+	</style>
+	
+	<!-- Content with insertion points. -->
+	<div id="protoux-controlbar">
+		<p>
+			<a href="#" onclick="toggleProtoUxBar()">~</a> | <a href="https://www.google.com/chrome/browser/">Requires Chrome</a> | <span>Requires experimental chrome flag:</span> <span style="color:#FFF;">chrome://flags/#enable-experimental-web-platform-features</span> | <a href="#nogo" onclick="toggleAnnotations()">Annotations: <span id="annotationson">ON</span><span id="annotationsoff" class="hide">OFF</span></a> | <a href="/protoux-docs.html" target="_blank">Documentation</a> | <a href="/protoux-examples.html" target="_blank">Examples</a>
+		</p>
+	</div>
+
+</template>
+
+<!-- Do Not Remove -->
+<script>protoux.loadCustomElement();</script>
+<!-- /Do Not Remove -->

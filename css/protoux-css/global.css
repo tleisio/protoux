@@ -1,0 +1,191 @@
+/*
+Attribute Priority {
+	width
+	height
+	margin
+	padding
+	<insert all other attributes in alphabetical order>
+	<insert any -webkit-like-stuff- as needed where it fits>
+	position
+	top
+	bottom
+	left
+	right
+}	
+*/
+html {
+	background:#EEE;
+	font-family:"Open Sans", Helvetica, Arial, sans-serif;
+	font-size:14px;
+}
+
+body{
+	margin:10px 10px 4rem 10px;
+	position:relative;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin:0 0 0.5rem 0;
+	font-weight:700;
+}
+
+h1 {
+	font-size:2.5rem;
+}
+
+h2 {
+	font-size:2rem;
+}
+
+h3 {
+	font-size:1.75rem;
+}
+
+h4 {
+	font-size:1.5rem;
+}
+
+h5 {
+	font-size:1.25rem;
+}
+
+h6 {
+	font-size:1.125rem;
+}
+
+p {
+	margin:0 0 0.5rem 0;
+	line-height:1.6rem;
+}
+ol, ul {
+	margin:1rem;
+}
+ol li {
+	margin:0 0 0.5rem 1.5rem;
+	line-height:1.4rem;
+	list-style-type:decimal;
+
+}
+
+ul li {
+	margin:0 0 0.5rem 1.5rem;
+	line-height:1.4rem;
+	list-style-type:disc;
+}
+article {
+	max-width:600px;
+}
+blockquote {
+	margin:0.5rem;
+	padding:0.5rem 1rem;
+	background:#F1F1F1;
+	border:1px solid #DDD;
+	font-size:0.9rem;
+}
+hr {
+	width:100%;
+	margin:1.5rem 0;
+	border:none;
+	border-bottom:1px solid #BBB;
+}
+form {
+
+}
+fieldset {
+	padding:10px;
+	border:1px solid #848484;
+}
+legend {
+	padding:0 0.5rem;
+	font-size:0.85rem;
+}
+code {
+	margin:0 0 0.5rem 0;
+	padding:0.5rem;
+	border:1px solid #CCC;
+	display:block;
+	font-family:courier;
+	line-height:1.2rem;
+}
+
+
+/* Annotations custom element */
+ux-annotation {
+	position:relative;
+}
+
+/* Grids */
+ux-grid {
+	display:block;
+	position:relative;
+}
+ux-grid item {
+	margin:0 0 1px 0;
+	padding:0.25rem;
+	background:#FFF;
+	display:block;
+}
+ux-grid item:hover {
+	cursor:pointer;
+}
+
+/* Tabs & Panels */
+ux-tabs {
+
+}
+ux-tabs tab {
+	margin:0 2px 0 0;
+	padding:0.5rem 1rem;
+	border:1px solid #848484;
+	display:inline-block;
+}
+ux-tabs tab:hover {
+	cursor:pointer;
+}
+ux-tabs tab.active {
+	border-bottom:1px solid #EEE;
+}
+ux-tabs panel {
+	min-height:300px;
+	margin:-1px 0 0 0;
+	padding:1rem;
+	border:1px solid #848484;
+	display:none;
+}
+ux-tabs panel.active {
+	display:block;
+}
+
+/* Pagination */
+ux-pagination {
+	display:block;
+	position:relative;
+}
+ux-pagination page {
+	width:100%;
+	min-height:100px;
+	border:1px solid #848484;
+	display:none;
+}
+ux-pagination page.active {
+	display:block;
+}
+
+/* Helpers */
+.floatl {
+	float:left;
+}
+.floatr {
+	float:right;
+}
+.clear {
+	clear:both;
+}
+.hide {
+	width:0;
+	height:0;
+	display:none;
+}
+
+
+

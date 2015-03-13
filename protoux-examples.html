@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="">
+		<meta name="description" content="" >
+		<meta name="keywords" content="" >
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<title></title>
+		
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800' rel='stylesheet' type='text/css'>
+		
+		<!-- Make the world turn. -->
+		<script type="text/javascript" src="js/protoux.js"></script>
+		<link href="ux-elements/ux-link.html" rel="import">
+
+		<!-- EXPERIMENTAL: Custom element imports. -->
+		<link href="ux-elements/ux-grid.html" rel="import">
+		<link href="ux-elements/ux-tabs.html" rel="import">
+		<link href="ux-elements/ux-pagination.html" rel="import">
+
+	</head>
+	
+	<body>
+		<!--
+			Example components within a layout.
+			Change ID's to be unique.
+			Change href to point to components.
+			Include layouts via data-layout attribute.
+		-->
+		<div class="row box">
+			<div class="col span_2_of_3">
+				<div class="box">
+					<ux-annotation>An example annotation.</ux-annotation>
+					<p>A styled div.box within a 2/3 column layout.</p>
+				</div>
+			</div>
+			<div class="col span_1_of_3">
+				<div class="box">
+					<ux-annotation>An example annotation.</ux-annotation>
+					<p>A styled div.box within a 1/3 column layout.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row box">
+			<div class="col span_2_of_3 box">
+				<div class="box"></div>
+			</div>
+			<div class="col span_1_of_3 box">
+				<div class="box"></div>
+			</div>
+		</div>
+		<div class="row box">
+			<div class="col span_2_of_3 box">
+				<!-- <div class="box"></div> -->
+			</div>
+			<div class="col span_1_of_3 box">
+				<!-- <div class="box"></div> -->
+			</div>
+		</div>
+
+		<hr />
+		
+		<h1>Normal Imports</h1>
+		<div class="row">
+			<link is="ux-link" id="example-article" href="webcomps/example-article.html" data-layout="col span_2_of_3" rel="import">
+		</div>
+
+		<hr />
+
+		<h1>Nested Link Imports</h1>
+		<div class="row">
+			<link is="ux-link" id="ex-par1" href="webcomps/example-parents.html" data-layout="" rel="import">
+		</div>
+
+		<hr />
+
+		<h1>Experimental Custom Grid Tag</h1>
+		<div class="row">
+			<ux-grid class="col span_2_of_3">
+				<ux-annotation>Person Grid</ux-annotation>
+				<item>Person Name 1</item>
+				<item>Person Name 2</item>
+			</ux-grid>
+			<ux-grid class="col span_1_of_3">
+				<ux-annotation>Product Grid</ux-annotation>
+				<item>Product A</item>
+				<item>Product B</item>
+			</ux-grid>
+		</div>
+
+		<hr />
+
+		<h1>Experimental Custom Tabs &amp; Panels Tag</h1>
+		<div class="row">
+			<ux-tabs class="col span_2_of_3">
+				<ux-annotation>It's a tab control!</ux-annotation>
+				<tab>Tab 1</tab>
+				<tab>Tab 2</tab>
+				<tab>Tab 3</tab>
+				<panel>
+					<h6>Panel 1</h6>
+					<p>Paragraph</p>
+					<ul>
+						<ux-annotation>Make sure this list is numbered!</ux-annotation>
+						<li>list item 1</li>
+						<li>list item 2</li>
+						<li>list item 3</li>
+					</ul>
+				</panel>
+				<panel>
+					<h6>Panel 2</h6>
+					<p>Paragraph</p>
+					<blockquote>Blockquote</blockquote>
+					<p>Paragraph</p>
+				</panel>
+				<panel>
+					<h6>Panel 3</h6>
+					<link is="ux-link" id="arty-panel3" rel="import" href="webcomps/example-article.html">
+				</panel>
+			</ux-tabs>
+		</div>
+
+		<hr />
+
+		<h1>ux-pagination</h1>
+		<div class="row">
+			<div class="col span_2_of_3">
+				<ux-pagination>
+					<page>
+						<ux-grid>
+							<item>Item 1-A</item>
+							<item>Item 1-B</item>
+							<item>Item 1-C</item>
+							<item>Item 1-D</item>
+							<item>Item 1-E</item>
+							<item>Item 1-F</item>
+							<item>Item 1-G</item>
+							<item>Item 1-H</item>
+							<item>Item 1-I</item>
+							<item>Item 1-J</item>
+							<item>Item 1-K</item>
+							<item>Item 1-L</item>
+							<item>Item 1-M</item>
+						</ux-grid>
+					</page>
+					<page>
+						<ux-grid>
+							<item>Item 2-A</item>
+							<item>Item 2-B</item>
+							<item>Item 2-C</item>
+							<item>Item 2-D</item>
+							<item>Item 2-E</item>
+							<item>Item 2-F</item>
+							<item>Item 2-G</item>
+							<item>Item 2-H</item>
+							<item>Item 2-I</item>
+							<item>Item 2-J</item>
+							<item>Item 2-K</item>
+							<item>Item 2-L</item>
+							<item>Item 2-M</item>
+						</ux-grid>
+					</page>
+					<page>page 3</page>
+					<page>page 4</page>
+					<page>page 5</page>
+					<page>page 6</page>
+					<page>page 7</page>
+					<page>page 8</page>
+					<page>page 9</page>
+					<page>page 10</page>
+					<page>page 11</page>
+					<page>page 12</page>
+					<page>page 13</page>
+					<page>page 14</page>
+					<page>page 15</page>
+					<page>page 16</page>
+					<page>page 17</page>
+					<page>page 18</page>
+					<page>page 19</page>
+					<page>page 20</page>
+					<page>page 21</page>
+				</ux-pagination>
+			</div>
+		</div>
+
+		<br />
+		<br />
+		<br />
+
+		<!-- ProtoUX control bar. -->
+		<ux-controlbar></ux-controlbar>
+	</body>
+
+</html>

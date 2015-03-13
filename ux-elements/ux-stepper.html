@@ -1,0 +1,106 @@
+<!--
+	Template definition
+-->
+<template id="ux-stepper">
+	<!-- Script to handle element events.  -->
+	<script>
+		var intValue = -1;
+		var intMax = null;
+		var intMin = null;
+		var isFeedbackVisible = false;
+		
+		//var objInput = this.querySelector('input.test');
+		var inputEl = document.currentScript.ownerDocument;
+		//var inputs = document.currentScript.parentNode.getElementsByTagName('input');
+		console.log(inputEl);
+		//temp.setAttribute('value','6');
+
+		// Init
+		//objInput.setAttribute('value','0');
+		function init() {
+			console.log('initializing stepper control...');
+			return 'initialized';
+		}
+
+		// Methods
+		function valueDecrease(event) {
+			console.log('val decrease');
+			console.log(event);
+		}
+
+		function valueIncrease(event) {
+			console.log('val increase');
+
+			intValue += 1;
+
+			console.log(event);
+		}
+
+		function onKeydown(event) {
+			console.log(event.keyCode);
+			// backspace, delete: 8, 46
+
+			// number row, numpad: 48-57, 96-105
+
+			// up arrow: 38
+			if (event.keyCode == 38) {
+				valueIncrease();
+			}
+
+			// down arrow: 40
+			if (event.keyCode == 40) {
+				valueDecrease();
+			}
+		}
+
+		function showFeedback(msg) {
+
+		}
+		function hideFeedback() {
+
+		}
+
+	</script>
+
+	<!-- Element styling. -->
+	<style>
+		button {
+			width:30px;
+			margin:0;
+		}
+		input {
+			width:60px;
+			margin:0;
+			text-align:center;
+		}
+		.feedback {
+			display:none;
+		}
+	</style>
+	
+	<!-- Content with insertion points. -->
+	<content select="ux-annotation"></content>
+
+	<button class="btn-decrease" onclick="valueDecrease(event)">-</button>
+	<input id="stepperinput" type="text" onkeydown="onKeydown(event)" value="-1" >
+	<input type="text" value="101" >
+	<input type="text" value="102" >
+	<input type="text" value="103" >
+	<input type="text" value="104" >
+	<button class="btn-increase" onclick="valueIncrease(event)">+</button>
+	
+	<div class="feedback">
+
+	</div>
+
+</template>
+
+<!-- Do Not Remove -->
+<!--
+	Encapsulation does not seem to work.
+	These scripts need to be unique and put into protoux.js
+
+	TODO: Create unique function in protoux.js for custom stepper functionality
+-->
+<script>protoux.loadCustomElement();</script>
+<!-- /Do Not Remove -->

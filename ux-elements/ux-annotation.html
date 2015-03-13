@@ -1,0 +1,64 @@
+<!--
+	Annotations can live under any parent node.
+-->
+<template id="ux-annotation">
+	<script>
+		function annotationClick(event) {
+			if (event.currentTarget.parentNode.querySelector('div.note').classList.contains('hide') == true) {
+				event.currentTarget.parentNode.querySelector('div.note').classList.remove('hide');
+			}
+			else {
+				event.currentTarget.parentNode.querySelector('div.note').classList.add('hide');
+			}
+		}
+	</script>
+	<style>
+		.annotation {
+			position:absolute;
+			top:-6px;
+			left:-6px;
+		}
+		.dot {
+			width:14px;
+			height:14px;
+			background:#0072BC;
+			border-radius:8px;
+			border:1px solid #FFF;
+			box-shadow:0 2px 4px 1px rgba(21,21,21,0.15);
+			position:relative;
+			z-index:2;
+		}
+		.dot:hover {
+			cursor:pointer;
+		}
+		.note {
+			width:200px;
+			padding:1em;
+			background:#FFF;
+			border:2px solid #0072BC;
+			border-radius:0.25rem;
+			display:block;
+			font-size:0.9rem;
+			line-height:1.4rem;
+			position:absolute;
+			top:6px;
+			left:6px;
+			z-index:1;
+		}
+		.hide {
+			display:none;
+		}
+	</style>
+
+	<!-- Content and insertion points. -->
+	<div class="annotation">
+		<div class="dot" onclick="annotationClick(event)"></div>
+		<div class="note hide">
+			<content></content>
+		</div>
+	</div>
+</template>
+
+<!-- Do Not Remove -->
+<script>protoux.loadCustomElement();</script>
+<!-- /Do Not Remove -->
